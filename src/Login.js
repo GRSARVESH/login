@@ -1,4 +1,5 @@
     import React from 'react'
+    import './Login.css';
 
 
     const Login = (props) => {
@@ -7,6 +8,7 @@
         return (
             <section className="login">
                 <div className="loginContainer">
+                    {!hasAccount?(<center>SIGNUP</center>):(<center>SIGNIN</center>)}
                     <label>Username</label>
                     <input type="text"  
                     autoFocus 
@@ -36,11 +38,7 @@
                         </>
                     )}
                     </div>
-
-
-
                 </div>
-
             </section>
         )
     }

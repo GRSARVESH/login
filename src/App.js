@@ -26,7 +26,7 @@ function App() {
   const handleLogin=()=>
   {
     clearErrors();
-    fire.auth.signInWithEmailAndPassword(email,password)
+    fire.auth().signInWithEmailAndPassword(email,password)
     .catch((err)=>
     {
       switch(err.code)
@@ -46,7 +46,7 @@ function App() {
   const handleSignup=()=>
   {
     clearErrors();
-    fire.auth.createUserWithEmailAndPassword(email,password)
+    fire.auth().createUserWithEmailAndPassword(email,password)
     .catch((err)=>
     {
       switch(err.code)
@@ -90,7 +90,7 @@ function App() {
   return (
     <div className="App">
       {user ?(
-        <Home handleLogout={handleLogout} />
+        <Home handleLogout={handleLogout}/>
       ):(
         <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignup={handleSignup} hasAccount={hasAccount}
       setHasAccount={setHasAccount} emailError={emailError} passwordError={passwordError}/>
